@@ -15,7 +15,8 @@
 - Currently WIP(Work in Progress) 
   - I'll be working on making it more stable and suitable for everyone 
   - I'll be adding a more detailed README.md to inform how credentials for this project could be acquired. 
-- Get a user's playlists by using OAuth 
-- User selects the playlist he/she wants to migrate 
-- User logs into his/her Google Account using OAuth 
-- The program creates a youtube playlist based on the user's spotify playlist. 
+- Process 
+  - Get a user's playlists by using OAuth 
+  - User selects the playlist he/she wants to migrate 
+  - User logs into his/her Google Account using OAuth 
+  - The program creates a youtube playlist based on the user's spotify playlist. 
