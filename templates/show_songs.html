@@ -1,0 +1,31 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block title %}These are the songs you could migrate: {% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="for_center">
+  <h1 class="heading" position="absolute" left="50%">Your Songs</h1>
+  <p class="description">These are the songs you could migrate:<br> (Click the button below to migrate them)</p>
+  <a class="button" href="{{url_for('runmigration', spotify_playlist=songs_to_add.head(1)['spotify_playlist'])}}"> Migrate the songs to youtube </a>
+</div>
+    {% if not songs_to_add.empty %}
+    {% for key, song in songs_to_add.iterrows(): %}
+  <div class="songcard" >
+    <div class="front" >
+        <p class="small"> {{song.keyword}} </p>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
