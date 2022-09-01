@@ -60,3 +60,4 @@ if __name__ == "__main__":
   except Exception as e:
     print(f"An HTTP error {e.resp.status} occurred:\n{e.content}")
 
+print()
